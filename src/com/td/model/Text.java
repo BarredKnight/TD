@@ -4,8 +4,12 @@ import com.td.model.Word;
 
 public class Text {
 
-	public String text;
+	public final String text;
 
-	public Word language;
+	public final Word language;
 
+	public Text(final String text, final Word language) {
+		this.text = text;
+		this.language = language;
+	}
 }

@@ -7,14 +7,21 @@ import com.td.model.parameters.WordPronunciation;
 
 public class Word {
 
-	public WordType type;
+	public final WordType type;
 
-	public WordSense sense;
+	public final WordSense sense;
 
-	public String spelling;
+	public final String spelling;
 
-	public WordPronunciation pronunciation;
+	public final WordPronunciation pronunciation;
 
-	public Words links;
+	public final Words links;
 
+	public Word(final WordType type, final WordSense sense, final String spelling, final WordPronunciation pronunciation, final Words links) {
+		this.type = type;
+		this.sense = sense;
+		this.spelling = spelling;
+		this.pronunciation = pronunciation;
+		this.links = links;
+	}
 }
