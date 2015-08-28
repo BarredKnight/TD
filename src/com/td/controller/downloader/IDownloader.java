@@ -1,7 +1,7 @@
 package com.td.controller.downloader;
 
-import com.td.java.fromSDK.File;
-import com.td.java.fromSDK.Path;
+import java.io.File;
+import java.nio.file.Path;
 
 public interface IDownloader {
 

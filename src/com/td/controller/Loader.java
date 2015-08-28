@@ -1,8 +1,8 @@
 package com.td.controller;
 
 import com.td.model.Text;
-import com.td.java.fromSDK.File;
-import com.td.model.Words_T__T_;
+import com.td.model.Words;
+import java.io.File;
 
 public class Loader {
 
@@ -10,7 +10,7 @@ public class Loader {
 		return null;
 	}
 
-	public Words_T__T_ loadWords(File file) {
+	public Words loadWords(File file) {
 		return null;
 	}
 

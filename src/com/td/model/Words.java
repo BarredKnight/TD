@@ -2,16 +2,16 @@ package com.td.model;
 
 import java.nio.file.Path;
 
-public class Text {
+public class Words<O,M> {
 
-	public final String text;
+	public final String sortedBy;
 
 	public final Word language;
 
 	public final Path location;
 
-	public Text(final String text, final Word language, final Path location) {
-		this.text = text;
+	public Words(final String sortedBy, final Word language, final Path location) {
+		this.sortedBy = sortedBy;
 		this.language = language;
 		this.location = location;
 	}

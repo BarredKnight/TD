@@ -1,15 +1,15 @@
 package com.td.controller;
 
-import com.td.model.Words_T__T_;
-import com.td.java.fromSDK.Path;
+import com.td.model.Words;
+import java.nio.file.Path;
 
 public class Saver {
 
-	public boolean save(Words_T__T_ words, Path to) {
+	public boolean save(Words words, Path to) {
 		return false;
 	}
 
-	public boolean save(Words_T__T_ words) {
+	public boolean save(Words words) {
 		return false;
 	}
 

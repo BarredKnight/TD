@@ -1,10 +1,10 @@
 package com.td.controller;
 
-import com.td.model.Words_T__T_;
+import com.td.model.Words;
 
 public class Translator {
 
-	public Words_T__T_ translate(Words_T__T_ words) {
+	public Words translate(Words words) {
 		return null;
 	}
 
