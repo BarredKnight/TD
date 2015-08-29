@@ -8,17 +8,14 @@ public class Words implements Iterator{
 
 	public final String sortedBy;
 
-	public final Word language;
-
 	public final Path location;
 
 	public final ArrayList<Word> massive;
 
 	public int index = 0;
 
-	public Words(final String sortedBy, final Word language, final Path location, final ArrayList<Word> massive) {
+	public Words(final String sortedBy, final Path location, final ArrayList<Word> massive) {
 		this.sortedBy = sortedBy;
-		this.language = language;
 		this.location = location;
 		this.massive = massive;
 	}
