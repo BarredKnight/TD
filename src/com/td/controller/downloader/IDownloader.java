@@ -5,8 +5,12 @@ import java.nio.file.Path;
 
 public interface IDownloader {
 
-	public abstract File download(Path path);
+	public String DEFAULT_PATH_TEXT = "";
 
-	public abstract Path download(Path downloadPath, Path savePath);
+	public String DEFAULT_PATH_WORDS = "";
+
+	public abstract File download(Path path) throws Exception;
+
+	public abstract File download(Path downloadPath, Path savePath) throws Exception;
 
 }
