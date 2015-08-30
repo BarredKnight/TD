@@ -21,6 +21,7 @@ public class Crusher {
 		while ((nextWord = new Word(getNextWord(localText).spelling)).spelling != null){
 			if (!words.contains(nextWord))
 			words.add(nextWord);
+			System.out.println(nextWord.spelling);
 		}
 		return new Words("without", null, words);
 	}
@@ -34,6 +35,7 @@ public class Crusher {
 			if (alphabet.contains(temp)){
 				word = word + temp;
 				wordSize = wordSize + 1;
+				localText = new Text(localText.text.substring(1, localText.text.length()), localText.language, localText.location);
 			}
 			else {
 				if (wordSize > 0) {
