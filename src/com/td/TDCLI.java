@@ -19,28 +19,19 @@ import java.util.Scanner;
 public class TDCLI {
     public static void main(String[] args) {
         System.out.println("Enter path to text-file :");
-        Scanner filePathScanner = new Scanner(System.in);
-
-        FileSystemDownloader downloader = new FileSystemDownloader();
-
-        final String path = filePathScanner.nextLine();
-        final File file = new File(path);
-        try {
-            downloader.download(file.toPath());
-        } catch (Exception e) {
-            System.out.println("Exception with downloading");
-        }
-        System.out.println("Downloading file : DONE ");
+        Scanner pathScanner = new Scanner(System.in);
 
         Text clearText = null;
         try {
-            Loader loader = new Loader(file);
+            Loader loader = new Loader(pathScanner.nextLine());
             clearText = loader.loadText();
         } catch (FileNotFoundException e) {
             System.out.println("Loading : ERROR ");
             System.out.println("File not found");
+            e.printStackTrace();
         } catch (IOException e) {
             System.out.println("Loading file : ERROR");
+            e.printStackTrace();
         }
         System.out.println("Loading file : DONE");
 
@@ -50,6 +41,7 @@ public class TDCLI {
             clearWords = Crusher.crush(clearText);
         } catch (MalformedURLException e) {
             System.out.println("ERROR");
+            e.printStackTrace();
         }
         System.out.println("DONE");
 
