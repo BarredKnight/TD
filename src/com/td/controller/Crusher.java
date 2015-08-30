@@ -10,11 +10,11 @@ import java.util.ArrayList;
 
 public class Crusher {
 
-	private final String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	private static final String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-	private Text localText;
+	private static Text localText;
 
-	public Words crush(Text text) throws MalformedURLException {
+	public static Words crush(Text text) throws MalformedURLException {
 		localText = text;
 		ArrayList<Word> words = new ArrayList<>();
 		Word nextWord;
@@ -25,7 +25,7 @@ public class Crusher {
 		return new Words("without", null, words);
 	}
 
-	private Word getNextWord(Text text){
+	private static Word getNextWord(Text text){
 		String word = "";
 		int wordSize = 0;
 
