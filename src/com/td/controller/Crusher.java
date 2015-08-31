@@ -19,7 +19,7 @@ public class Crusher {
 		ArrayList<Word> words = new ArrayList<>();
 		Word nextWord;
 		while ((nextWord = new Word(getNextWord(localText).spelling)).spelling != null){
-			if (!words.contains(nextWord))
+			if (!checkForContain(words, nextWord))
 			words.add(nextWord);
 			System.out.println(nextWord.spelling);
 		}
@@ -52,4 +52,12 @@ public class Crusher {
 
 	}
 
+	private static boolean checkForContain(ArrayList<Word> words, Word word){
+		for (Word currentWord : words) {
+			if (currentWord.spelling.equals(word.spelling)) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
