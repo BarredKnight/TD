@@ -24,7 +24,7 @@ public class Loader {
 		while (fileReader.ready()){
 			final char[] chars = new char[50];
 			fileReader.read(chars);
-			string = string + chars;
+			string = string + String.copyValueOf(chars);
 			}
 //		Translator translate = Translator.getInstance();
 //		String language = translate.detect(string.substring(0, 5));		WEIRD error, really
