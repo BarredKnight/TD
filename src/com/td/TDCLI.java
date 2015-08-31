@@ -24,6 +24,7 @@ public class TDCLI {
         Text clearText = null;
         try {
             Loader loader = new Loader(pathScanner.nextLine());
+//            Loader loader = new Loader("/home/andrew/Downloads/hehe.txt"); For my home testing
             clearText = loader.loadText();
         } catch (FileNotFoundException e) {
             System.out.println("Loading : ERROR ");
@@ -34,6 +35,8 @@ public class TDCLI {
             e.printStackTrace();
         }
         System.out.println("Loading file : DONE");
+
+        System.out.println(clearText.text);
 
         System.out.print("Crushing file : ");
         Words clearWords = null;
