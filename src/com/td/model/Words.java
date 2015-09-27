@@ -3,6 +3,7 @@ package com.td.model;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 
 public class Words implements Iterator{
 
@@ -10,23 +11,27 @@ public class Words implements Iterator{
 
 	public final Path location;
 
-	public final ArrayList<Word> massive;
+	public final LinkedHashMap <Word,ArrayList<Word>> ourWords;
 
 	public int index = 0;
 
-	public Words(final String sortedBy, final Path location, final ArrayList<Word> massive) {
+
+
+	public Words(final String sortedBy, final Path location, final LinkedHashMap <Word,ArrayList<Word>> ourWords) {
 		this.sortedBy = sortedBy;
 		this.location = location;
-		this.massive = massive;
+		this.ourWords = ourWords;
 	}
+
+
 
 	@Override
 	public boolean hasNext() { ////////////////////////////////////////////////// Maybe error
-		return massive.get(index) != null;
+		return ourWords.get(index) != null;
 	}
 
 	@Override
 	public Object next() {
-		return massive.get(index);
+		return ourWords.get(index);
 	}
 }
