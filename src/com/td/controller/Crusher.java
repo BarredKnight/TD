@@ -16,14 +16,20 @@ public class Crusher {
 
 	public static Words crush(Text text) throws MalformedURLException {
 		localText = text;
-		LinkedHashMap<Word,ArrayList<Word>> words = new LinkedHashMap<>();
+		ArrayList<Word> words = new ArrayList<>();
 		Word nextWord;
 		while ((nextWord = new Word(getNextWord(localText).spelling)).spelling != null){
-			if (!words.containsValue(nextWord))
-			words.put(nextWord,null);
-			System.out.println(nextWord.spelling);
+			if (!checkForContain(words, nextWord)) {
+				words.add(nextWord);
+				System.out.println(nextWord.spelling);
+			}
 		}
-		return new Words("without", null, words);
+
+		final LinkedHashMap<Word, ArrayList<Word>> bufferMap = new LinkedHashMap<>();
+		for (Word buffWord : words){
+			bufferMap.put(buffWord, null);
+		}
+		return new Words(null, null, bufferMap);
 	}
 
 	private static Word getNextWord(Text text){
@@ -52,9 +58,9 @@ public class Crusher {
 
 	}
 
-	private static boolean checkForContain(Words words, Word word){
-		for (int i=0; i<words.ourWords.size(); i++) {
-			if (words.ourWords.containsKey(word)) {
+	private static boolean checkForContain(ArrayList<Word> words, Word word){
+		for (Word currentWord : words) {
+			if (currentWord.spelling.equals(word.spelling)) {
 				return true;
 			}
 		}
