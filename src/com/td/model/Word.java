@@ -7,4 +7,8 @@ public class Word {
 	public Word(final String spelling) {
 		this.spelling = spelling;
 	}
+
+	public String toString(){
+		return spelling;
+	}
 }
