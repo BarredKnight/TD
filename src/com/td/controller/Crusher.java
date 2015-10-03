@@ -21,7 +21,6 @@ public class Crusher {
 		while ((nextWord = new Word(getNextWord(localText).spelling)).spelling != null){
 			if (!words.containsKey(nextWord)){
 			words.put(nextWord,null);
-			System.out.println(nextWord);
 			}
 		}
 		return new Words("without", null, words);
