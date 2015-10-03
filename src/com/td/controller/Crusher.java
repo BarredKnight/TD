@@ -5,8 +5,8 @@ import com.td.model.Words;
 import com.td.model.Text;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public class Crusher {
 
@@ -16,12 +16,13 @@ public class Crusher {
 
 	public static Words crush(Text text) throws MalformedURLException {
 		localText = text;
-		ArrayList<Word> words = new ArrayList<>();
+		LinkedHashMap<Word,ArrayList<Word>> words = new LinkedHashMap<>();
 		Word nextWord;
 		while ((nextWord = new Word(getNextWord(localText).spelling)).spelling != null){
-			if (!checkForContain(words, nextWord))
-			words.add(nextWord);
-			System.out.println(nextWord.spelling);
+			if (!words.containsKey(nextWord)){
+			words.put(nextWord,null);
+			System.out.println(nextWord);
+			}
 		}
 		return new Words("without", null, words);
 	}
@@ -52,9 +53,9 @@ public class Crusher {
 
 	}
 
-	private static boolean checkForContain(ArrayList<Word> words, Word word){
-		for (Word currentWord : words) {
-			if (currentWord.spelling.equals(word.spelling)) {
+	private static boolean checkForContain(Words words, Word word){
+		for (int i=0; i<words.ourWords.size(); i++) {
+			if (words.ourWords.containsKey(word)) {
 				return true;
 			}
 		}

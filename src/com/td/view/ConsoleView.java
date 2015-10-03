@@ -1,6 +1,5 @@
 package com.td.view;
 
-import com.td.model.Word;
 import com.td.model.Words;
 
 public class ConsoleView {
@@ -9,18 +8,18 @@ public class ConsoleView {
 
     public static void showWords(Words words){
         boolean ln = false;
-        for (Word word : words.massive){
 
+
+        for (int i = 0; i < words.ourWords.size(); i++ )
             if (ln)
-                System.out.println(word.spelling);
-            else{
-                System.out.print(word.spelling);
-                for (int i = 0; i < CELL_LENGTH - word.spelling.length(); i++){
-                    System.out.print(" ");
-                }
+                System.out.println(words.ourWords.values().toString());
+            else {
+                System.out.println(words.ourWords.values());
+                for (int j = 0; j < CELL_LENGTH - words.ourWords.values().size(); j++) ;
+                System.out.print(" ");
             }
+
             ln = !ln;
         }
     }
 
-}
