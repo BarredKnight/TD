@@ -2,24 +2,39 @@ package com.td.view;
 
 import com.td.model.Words;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ConsoleView {
 
-    private static final int CELL_LENGTH = 15;
 
     public static void showWords(Words words){
-        boolean ln = false;
 
-
-        for (int i = 0; i < words.ourWords.size(); i++ )
-            if (ln)
-                System.out.println(words.ourWords.values().toString());
-            else {
-                System.out.println(words.ourWords.values());
-                for (int j = 0; j < CELL_LENGTH - words.ourWords.values().size(); j++) ;
-                System.out.print(" ");
-            }
-
-            ln = !ln;
+        for (String stringToPrint : getLinesToShow(words.ourWords.toString())){
+            System.out.println(stringToPrint);
         }
+     }
+
+    /**
+     * Works only for string, gotten by toString from Map
+     * @return the {@code List} of string, gotten from input String
+     * */
+    private static List<String> getLinesToShow(final String lineToSeparate){
+
+        int newLineFrom = 1;
+        List<String> outputLines = new ArrayList<String>();
+
+        for (int i = 0; i < lineToSeparate.length(); i++){
+            if (lineToSeparate.substring(i, i+1).equals("]")){
+                outputLines.add(lineToSeparate.substring(newLineFrom, i+1));
+                newLineFrom = i+3;
+            }
+            else{
+
+            }
+        }
+
+        return outputLines;
+    }
     }
 
