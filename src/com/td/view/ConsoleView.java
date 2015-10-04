@@ -84,7 +84,7 @@ public class ConsoleView {
         System.out.println("Enter path to text-file :");
         while (true) {
             try {
-                Loader loader = new Loader(pathScanner.nextLine());
+                final Loader loader = new Loader(pathScanner.nextLine());
                 return loader.loadText();
             } catch (FileNotFoundException e) {
                 System.out.println("Wrong way! Try again:");
