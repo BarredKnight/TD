@@ -22,7 +22,7 @@ public class ConsoleView {
         return loadText();
     }
 
-    public static Words crush(Text clearText) {
+    public static Words crush(final Text clearText) {
         System.out.println(BORDER + "crushing" + BORDER);
         try {
             return Crusher.crush(clearText);
