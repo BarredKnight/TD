@@ -22,7 +22,7 @@ public class ConsoleView {
         return loadText();
     }
 
-    public static Words crush(Text clearText) {
+    public static Words crush(final Text clearText) {
         System.out.println(BORDER + "crushing" + BORDER);
         try {
             return Crusher.crush(clearText);
@@ -32,7 +32,7 @@ public class ConsoleView {
         return null;
     }
 
-    public static Words translate(Words clearWords) {
+    public static Words translate(final Words clearWords) {
         System.out.println(BORDER + "translating" + BORDER);
         return WordsTranslator.translate(clearWords);
     }
@@ -40,7 +40,7 @@ public class ConsoleView {
     public static void sort() {
     }
 
-    public static void holdOn(int ms) {
+    public static void holdOn(final int ms) {
         System.out.println(BORDER + "don't hurry" + BORDER);
         try {
             Thread.sleep(ms);
@@ -49,7 +49,7 @@ public class ConsoleView {
         }
     }
 
-    public static void show(Words words) {
+    public static void show(final Words words) {
 
         System.out.println(BORDER + "showing" + BORDER);
         holdOn(2000);
