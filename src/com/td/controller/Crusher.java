@@ -52,12 +52,4 @@ public class Crusher {
 
 	}
 
-	private static boolean checkForContain(Words words, Word word){
-		for (int i=0; i<words.ourWords.size(); i++) {
-			if (words.ourWords.containsKey(word)) {
-				return true;
-			}
-		}
-		return false;
-	}
 }
